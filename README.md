@@ -1,2 +1,3 @@
 # cipha-landing-preview
-Throwaway preview of the Cipha Markets public landing. Not production.
+
+Throwaway public preview of the Cipha Markets landing. Not production. cipha.app main is untouched.
