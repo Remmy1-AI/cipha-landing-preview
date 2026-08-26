@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/room.css" />
 </head>
 <body class="page-home">
   <a class="skip" href="#main">Skip to content</a>
@@ -25,33 +26,61 @@
   </header>
 
   <main id="main">
-    <div class="alive" id="alive">
-      <canvas class="bloom-canvas" id="bloom" aria-hidden="true"></canvas>
-      <div class="orbs orbs-back" id="orbs-back" aria-hidden="true"></div>
+    <section class="room" aria-label="Council in session">
+      <p class="room-law" aria-hidden="true">They debate.<br />Code decides.</p>
 
-      <section class="hero">
-        <p class="eyebrow">Cipha / MetaTrader 5 for AI agents</p>
-        <h1 class="hero-title">
-          <span class="hero-line hero-line--muted">Stop watching the charts.</span>
-          <span class="hero-line hero-line--ink">Start collecting payouts.</span>
+      <ol class="minutes">
+        <li class="m" style="--d:0">
+          <time>08:12</time>
+          <span class="who">Aura</span>
+          <p>Bid is holding 2336.2–2337.0. Buy the dip.</p>
+        </li>
+        <li class="m" style="--d:1">
+          <time>08:12</time>
+          <span class="who">Kai</span>
+          <p>Too early. Let the spread die.</p>
+        </li>
+        <li class="m" style="--d:2">
+          <time>08:13</time>
+          <span class="who">Abena</span>
+          <p>I veto a chase into the print.</p>
+        </li>
+        <li class="m is-gate" style="--d:3">
+          <time>08:13</time>
+          <span class="who">Gate</span>
+          <p>News <i class="fail">fail</i>. Size and hours pass.</p>
+        </li>
+        <li class="m is-abs" style="--d:4">
+          <time>08:13</time>
+          <span class="who">Cipha</span>
+          <p>Abstain. Nothing sent.</p>
+        </li>
+        <li class="m" style="--d:5">
+          <time>08:41</time>
+          <span class="who">Aura</span>
+          <p>London is clean. Same idea, no print.</p>
+        </li>
+        <li class="m is-gate" style="--d:6">
+          <time>08:42</time>
+          <span class="who">Gate</span>
+          <p>Size hours news loss. All <i class="pass">pass</i>.</p>
+        </li>
+        <li class="m is-sent" style="--d:7">
+          <time>08:42</time>
+          <span class="who">Cipha</span>
+          <p>Sent to your MT5. XAUUSD buy 2336.80 · SL 2319.40 · TP 2372.60</p>
+        </li>
+      </ol>
+
+      <div class="room-foot">
+        <h1>
+          <span>Stop watching the charts.</span>
+          <span>Start collecting payouts.</span>
         </h1>
-        <p class="hero-sub">Your broker. Your money. They debate. Code decides.</p>
-        <div class="hero-cta">
-          <a class="btn btn-ink" href="https://cipha.app/auth">Connect your MT5</a>
-          <a class="btn btn-ghost" href="how.html">See how it works</a>
-        </div>
-      </section>
-
-      <section class="debate" aria-label="The product law">
-        <h2 class="debate-title">
-          <span>They debate.</span>
-          <span>Code decides.</span>
-        </h2>
-        <p class="debate-caption">Ten personas. A validator. Your MT5. Nothing executes without the gate.</p>
-      </section>
-
-      <div class="orbs orbs-front" id="orbs-front" aria-hidden="true"></div>
-    </div>
+        <p class="lede">Your broker. Your money.</p>
+        <a class="btn btn-ink" href="https://cipha.app/auth">Connect your MT5</a>
+      </div>
+    </section>
 
     <section class="how" id="how">
       <header class="flow-head reveal">
