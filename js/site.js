@@ -3,7 +3,6 @@
   "use strict";
 
   var EASE = "0.65s cubic-bezier(0.32, 0.72, 0, 1)";
-  var GOLD = "rgba(196, 163, 90,";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* —— Header shrink —— */
@@ -135,171 +134,10 @@
     document.querySelectorAll(".flow-stack").forEach(bindFlow);
   }
 
-  /* —— Gold bloom + orbs (hero + debate) —— */
-  function bindAlive() {
-    var root = document.getElementById("alive");
-    if (!root) return;
-
-    var canvas = document.getElementById("bloom");
-    var back = document.getElementById("orbs-back");
-    var front = document.getElementById("orbs-front");
-    if (!canvas || !back || !front) return;
-
-    var ctx = canvas.getContext("2d");
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var mouse = { x: 0.5, y: 0.4, tx: 0.5, ty: 0.4 };
-    var t0 = performance.now();
-    var running = false;
-
-    var specs = [
-      { z: "back", r: 180, x: 0.18, y: 0.28, s: 0.22, a: 1.1 },
-      { z: "back", r: 240, x: 0.72, y: 0.22, s: 0.16, a: 0.7 },
-      { z: "back", r: 140, x: 0.48, y: 0.62, s: 0.19, a: 1.6 },
-      { z: "front", r: 110, x: 0.32, y: 0.38, s: 0.28, a: 0.9 },
-      { z: "front", r: 90, x: 0.62, y: 0.48, s: 0.24, a: 1.4 }
-    ];
-
-    var orbs = specs.map(function (s, i) {
-      var el = document.createElement("span");
-      el.className = "orb";
-      el.style.width = s.r + "px";
-      el.style.height = s.r + "px";
-      (s.z === "front" ? front : back).appendChild(el);
-      return {
-        el: el,
-        r: s.r,
-        bx: s.x,
-        by: s.y,
-        s: s.s,
-        a: s.a,
-        phase: i * 1.3,
-        z: s.z
-      };
-    });
-
-    function size() {
-      var rect = root.getBoundingClientRect();
-      var w = Math.max(1, Math.floor(rect.width));
-      var h = Math.max(1, Math.floor(root.scrollHeight || rect.height));
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      canvas.style.width = w + "px";
-      canvas.style.height = h + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      return { w: w, h: h };
-    }
-
-    var dim = size();
-
-    window.addEventListener(
-      "pointermove",
-      function (e) {
-        var rect = root.getBoundingClientRect();
-        if (!rect.width || !rect.height) return;
-        mouse.tx = (e.clientX - rect.left) / rect.width;
-        mouse.ty = (e.clientY - rect.top) / rect.height;
-      },
-      { passive: true }
-    );
-
-    function tick(now) {
-      if (!running) return;
-      var t = (now - t0) / 1000;
-      mouse.x += (mouse.tx - mouse.x) * 0.04;
-      mouse.y += (mouse.ty - mouse.y) * 0.04;
-
-      dim = dim.w ? dim : size();
-      var w = canvas.width / dpr;
-      var h = canvas.height / dpr;
-
-      ctx.clearRect(0, 0, w, h);
-      var bx = w * (0.42 + Math.sin(t * 0.18) * 0.16 + (mouse.x - 0.5) * 0.08);
-      var by = h * (0.28 + Math.cos(t * 0.14) * 0.1 + (mouse.y - 0.5) * 0.06);
-      var br = Math.max(w, h) * 0.42;
-      var g = ctx.createRadialGradient(bx, by, 0, bx, by, br);
-      g.addColorStop(0, GOLD + " 0.28)");
-      g.addColorStop(0.38, GOLD + " 0.10)");
-      g.addColorStop(1, GOLD + " 0)");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, w, h);
-
-      /* faint threads between a couple of orbs */
-      var pts = [];
-      orbs.forEach(function (o) {
-        var sway = o.z === "front" ? 28 : 18;
-        var x =
-          (o.bx + Math.sin(t * o.s + o.phase) * 0.08 + (mouse.x - 0.5) * 0.04) * w;
-        var y =
-          (o.by + Math.cos(t * o.s * 0.85 + o.a) * 0.07 + (mouse.y - 0.5) * 0.03) * h;
-        o.el.style.transform =
-          "translate3d(" + (x - o.r / 2) + "px," + (y - o.r / 2) + "px,0)";
-        pts.push({ x: x, y: y, z: o.z });
-      });
-      ctx.strokeStyle = GOLD + " 0.18)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      if (pts[0] && pts[3]) {
-        ctx.moveTo(pts[0].x, pts[0].y);
-        ctx.quadraticCurveTo(w * 0.4, h * 0.2, pts[3].x, pts[3].y);
-      }
-      if (pts[1] && pts[4]) {
-        ctx.moveTo(pts[1].x, pts[1].y);
-        ctx.quadraticCurveTo(w * 0.7, h * 0.45, pts[4].x, pts[4].y);
-      }
-      ctx.stroke();
-
-      requestAnimationFrame(tick);
-    }
-
-    function start() {
-      if (running) return;
-      running = true;
-      requestAnimationFrame(tick);
-    }
-    function stop() {
-      running = false;
-    }
-
-    window.addEventListener(
-      "resize",
-      function () {
-        dim = size();
-      },
-      { passive: true }
-    );
-
-    if (reduce) {
-      dim = size();
-      ctx.clearRect(0, 0, dim.w, dim.h);
-      var g = ctx.createRadialGradient(dim.w * 0.45, dim.h * 0.28, 0, dim.w * 0.45, dim.h * 0.28, Math.max(dim.w, dim.h) * 0.4);
-      g.addColorStop(0, GOLD + " 0.18)");
-      g.addColorStop(1, GOLD + " 0)");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, dim.w, dim.h);
-      return;
-    }
-
-    if ("IntersectionObserver" in window) {
-      var vis = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) start();
-            else stop();
-          });
-        },
-        { threshold: 0.02 }
-      );
-      vis.observe(root);
-    } else {
-      start();
-    }
-  }
-
   shrinkHeader();
   bindReveals();
   bindPlan();
   bindAllFlows();
-  bindAlive();
   window.addEventListener("scroll", shrinkHeader, { passive: true });
 
   void EASE;
