@@ -1,348 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Cipha Markets — MetaTrader 5 for AI agents</title>
-  <meta name="description" content="Your broker. Your money. They debate. Code decides. Cipha is a non-custodial council that trades on your MT5." />
-  <meta name="theme-color" content="#F4EDE3" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F7F2EA" />
+  <title>Cipha — You don’t have to become a trader</title>
   <link rel="stylesheet" href="css/site.css" />
-  <link rel="stylesheet" href="css/room.css" />
 </head>
-<body class="page-home">
-  <a class="skip" href="#main">Skip to content</a>
-
+<body>
   <header class="site-header">
-    <a class="brand" href="index.html">CiPHA</a>
-    <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="index.html">CIPHA</a>
+    <nav class="nav">
       <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#partners">Partners</a>
+      <a href="pricing.html">Pricing</a>
     </nav>
-    <a class="btn btn-gold" href="https://cipha.app/auth">Connect your MT5</a>
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="https://cipha.app/auth">Log in</a>
+      <a class="btn btn-primary" href="https://cipha.app/auth">Connect your account</a>
+    </div>
   </header>
 
-  <main id="main">
-    <section class="room" aria-label="Council in session">
-      <p class="room-law" aria-hidden="true">They debate.<br />Code decides.</p>
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <h1>You don’t have to become a trader.</h1>
+        <p class="lede">Your money stays at your broker.<br />An AI uses the account.<br />You don’t sit on charts, and you don’t click buy/sell here.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="https://cipha.app/auth">Connect your account</a>
+          <a class="btn btn-outline btn-lg" href="#buy">See pricing</a>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img src="assets/dead-keys.svg" width="880" height="880" alt="Dead Keys desk: locked Buy and Sell, agent seated, connected to your broker" />
+        <figcaption class="demo-caption">Demonstration</figcaption>
+      </figure>
+    </section>
 
-      <ol class="minutes">
-        <li class="m" style="--d:0">
-          <time>08:12</time>
-          <span class="who">Aura</span>
-          <p>Bid is holding 2336.2–2337.0. Buy the dip.</p>
-        </li>
-        <li class="m" style="--d:1">
-          <time>08:12</time>
-          <span class="who">Kai</span>
-          <p>Too early. Let the spread die.</p>
-        </li>
-        <li class="m" style="--d:2">
-          <time>08:13</time>
-          <span class="who">Abena</span>
-          <p>I veto a chase into the print.</p>
-        </li>
-        <li class="m is-gate" style="--d:3">
-          <time>08:13</time>
-          <span class="who">Gate</span>
-          <p>News <i class="fail">fail</i>. Size and hours pass.</p>
-        </li>
-        <li class="m is-abs" style="--d:4">
-          <time>08:13</time>
-          <span class="who">Cipha</span>
-          <p>Abstain. Nothing sent.</p>
-        </li>
-        <li class="m" style="--d:5">
-          <time>08:41</time>
-          <span class="who">Aura</span>
-          <p>London is clean. Same idea, no print.</p>
-        </li>
-        <li class="m is-gate" style="--d:6">
-          <time>08:42</time>
-          <span class="who">Gate</span>
-          <p>Size hours news loss. All <i class="pass">pass</i>.</p>
-        </li>
-        <li class="m is-sent" style="--d:7">
-          <time>08:42</time>
-          <span class="who">Cipha</span>
-          <p>Sent to your MT5. XAUUSD buy 2336.80 · SL 2319.40 · TP 2372.60</p>
-        </li>
-      </ol>
+    <div class="wrap">
+      <div class="trust">
+        <span><i></i> Money stays at your broker.</span>
+        <span><i></i> Any MT5.</span>
+        <span><i></i> You can stop it.</span>
+      </div>
+    </div>
 
-      <div class="room-foot">
-        <h1>
-          <span>Stop watching the charts.</span>
-          <span>Start collecting payouts.</span>
-        </h1>
-        <p class="lede">Your broker. Your money.</p>
-        <a class="btn btn-ink" href="https://cipha.app/auth">Connect your MT5</a>
+    <section class="wrap how" id="how">
+      <p class="kicker">How it works</p>
+      <h2>Three steps.</h2>
+      <div class="steps">
+        <div class="step"><b>1</b><p>Get a broker account, or use the one you have.</p></div>
+        <div class="step"><b>2</b><p>Connect it to Cipha.</p></div>
+        <div class="step"><b>3</b><p>The AI works. You check in.</p></div>
       </div>
     </section>
 
-    <section class="how" id="how">
-      <header class="flow-head reveal">
-        <h2>How it works</h2>
-        <p>Scroll — each step stacks on the last.</p>
-      </header>
+    <section class="wrap get">
+      <h2>What you get</h2>
+      <ul>
+        <li>It looks at the market before it acts.</li>
+        <li>It can wait. It does not have to trade.</li>
+        <li>It trades on your login, not ours.</li>
+        <li>You get a log in English, not a chart you have to read.</li>
+        <li>Risk rules sit in code, so it can’t skip them.</li>
+      </ul>
+    </section>
 
-      <div class="flow-stack" style="--flow-count: 4" aria-label="How Cipha works">
-        <div class="flow-sticky">
-          <div class="flow-deck">
-
-            <article class="flow-layer" style="z-index: 1">
-              <div class="flow-copy">
-                <span class="flow-step-num">01</span>
-                <h3>Research, then they fight</h3>
-                <ul>
-                  <li>They do targeted market research. Not AI slop.</li>
-                  <li>Then ten personas debate hard.</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <div class="obj">
-                  <div class="rs-strip">
-                    <div class="rs-top">
-                      <span class="rs-pair">XAUUSD</span>
-                      <span class="rs-session">London</span>
-                    </div>
-                    <ul>
-                      <li>Bid holds 2336.2–2337.0</li>
-                      <li>London open, USD quiet</li>
-                      <li>No high-impact print next 90m</li>
-                    </ul>
-                  </div>
-                  <div class="takes">
-                    <div class="take take-a">Buy the dip<small>Aura</small></div>
-                    <div class="take take-b">Too early<small>Kai</small></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="flow-layer is-alt" style="z-index: 2">
-              <div class="flow-copy">
-                <span class="flow-step-num">02</span>
-                <h3>Veto. Abstain. Code holds the gate.</h3>
-                <ul>
-                  <li>A persona can kill the plan. The desk can sit out.</li>
-                  <li>Size, hours, news, daily loss are checked in code, not a model.</li>
-                  <li>It cannot hallucinate a pass.</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <div class="obj">
-                  <div class="mini-plan">
-                    <div class="mini-plan-head">
-                      <strong>XAUUSD</strong>
-                      <span class="side-buy">Buy</span>
-                    </div>
-                    <div class="mini-rows">
-                      <div><small>Entry</small><b>2336.80</b></div>
-                      <div><small>SL</small><b>2319.40</b></div>
-                      <div><small>TP</small><b>2372.60</b></div>
-                    </div>
-                    <span class="stamp stamp-veto">Veto</span>
-                    <span class="stamp stamp-abs">Abstain</span>
-                  </div>
-                  <div class="rails">
-                    <div class="rail"><span>Size</span><span class="ok">Pass</span></div>
-                    <div class="rail"><span>Hours</span><span class="ok">Pass</span></div>
-                    <div class="rail"><span>News</span><span class="no">Fail</span></div>
-                    <div class="rail"><span>Daily loss</span><span class="ok">Pass</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="flow-layer" style="z-index: 3">
-              <div class="flow-copy">
-                <span class="flow-step-num">03</span>
-                <h3>It trades. On your MT5.</h3>
-                <ul>
-                  <li>Non-custodial. You keep the account.</li>
-                  <li>Cipha never holds the funds.</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <div class="obj">
-                  <div class="mini-plan">
-                    <div class="mini-plan-head">
-                      <strong>XAUUSD</strong>
-                      <span class="side-buy">Buy</span>
-                    </div>
-                    <div class="mini-rows">
-                      <div><small>Entry</small><b>2336.80</b></div>
-                      <div><small>SL</small><b>2319.40</b></div>
-                      <div><small>TP</small><b>2372.60</b></div>
-                    </div>
-                    <div class="send-status"><span class="pip" aria-hidden="true"></span>Sent to your MT5</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="flow-layer is-alt" style="z-index: 4">
-              <div class="flow-copy">
-                <span class="flow-step-num">04</span>
-                <h3>Every outcome. Then it gets better.</h3>
-                <ul>
-                  <li>Win, lose, or abstain: it keeps the why.</li>
-                  <li>It writes its own plays.</li>
-                  <li>Best hours come from our data, not a vibe.</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <div class="obj">
-                  <div class="mem">
-                    <div class="mem-row"><span class="tag tag-w">W</span> London continuation — session matched.</div>
-                    <div class="mem-row"><span class="tag tag-l">L</span> Fade into NFP — news rail would now fail.</div>
-                    <div class="mem-row"><span class="tag tag-a">Abs</span> Spread too wide at open — sat out.</div>
-                  </div>
-                  <div>
-                    <div class="hours" aria-hidden="true">
-                      <span></span><span></span><span></span><span></span>
-                      <span class="is-hot"></span><span class="is-hot"></span>
-                      <span class="is-hot"></span><span></span>
-                      <span class="is-hot"></span><span class="is-hot"></span>
-                      <span></span><span></span>
-                    </div>
-                    <div class="hours-label"><span>00</span><span>London</span><span>NY</span><span>24</span></div>
-                  </div>
-                  <span class="chip chip-gold own-play">Own play</span>
-                </div>
-              </div>
-            </article>
-
+    <section class="wrap buy" id="buy">
+      <div class="buy-head">
+        <h2>Start with the desk.</h2>
+        <div class="toggles">
+          <div class="seg" role="group" aria-label="Currency">
+            <button type="button" data-currency="USD" aria-pressed="true">USD</button>
+            <button type="button" data-currency="GHS" aria-pressed="false">GHS</button>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="send" id="send">
-      <div class="send-copy reveal">
-        <h2>One plan. Sent to your account.</h2>
-        <p>Non-custodial. You keep the account. Cipha never holds the funds.</p>
-        <div class="brokers">
-          <span>Exness</span>
-          <span>IC Markets</span>
-          <span>EquityEdge</span>
-        </div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-top">
-          <span class="plan-pair">XAUUSD</span>
-          <span class="side-buy">Buy</span>
-        </div>
-        <div class="plan-fields">
-          <div class="plan-row"><small>Entry</small><b>2336.80</b></div>
-          <div class="plan-row"><small>SL</small><b>2319.40</b></div>
-          <div class="plan-row"><small>TP</small><b>2372.60</b></div>
-        </div>
-        <div class="send-status"><span class="pip" aria-hidden="true"></span>Sent to your MT5</div>
-      </div>
-    </section>
-
-    <section class="engines" id="engines">
-      <ul class="engines-list">
-        <li class="reveal">
-          <span class="eng-name">Council</span>
-          <span class="eng-state is-live">Live</span>
-          <span class="eng-note">The 10-persona desk. It trades under rails.</span>
-        </li>
-        <li class="reveal">
-          <span class="eng-name">Whiskey</span>
-          <span class="eng-state is-lock">Locked</span>
-          <span class="eng-note">One agent + runner. Charges when it’s ready.</span>
-        </li>
-        <li class="reveal">
-          <span class="eng-name">Binaries</span>
-          <span class="eng-state is-lock">Locked</span>
-          <span class="eng-note">Deriv. Up or down. Not this page’s buy.</span>
-        </li>
-        <li class="reveal">
-          <span class="eng-name">Arena</span>
-          <span class="eng-state is-lock">Locked</span>
-          <span class="eng-note">The call. Agents draw. Later.</span>
-        </li>
-      </ul>
-      <p class="engines-line reveal">Add what you need at <a href="#pricing">pricing</a>.</p>
-    </section>
-
-    <section class="pricing" id="pricing">
-      <h2 class="reveal">Pick the desk. Add engines later.</h2>
-      <p class="pricing-lead reveal">Council is the buy. Yearly is 10 months. Stack two engines, take 15%. Three, 20%.</p>
-
-      <div class="price-grid">
-        <article class="price-card is-live reveal">
-          <p class="price-kicker">Live</p>
+      <div class="cards">
+        <article class="card featured">
+          <span class="badge">The one</span>
           <h3>Council</h3>
-          <p class="price-amt">$79 <span>/ GHS 950</span>
-            <small>per month</small>
-          </p>
-          <p class="founding">Founding $59 / GHS 700</p>
-          <p class="price-body">Ten personas. A validator. Rails in code. Trades on your MT5.</p>
-          <a class="btn btn-gold-on-ink" href="https://cipha.app/auth">Connect your MT5</a>
+          <p class="price" data-price="council">$79 <small>/ mo</small></p>
+          <p class="founding" data-founding="council">Founding $59</p>
+          <ul class="checks">
+            <li>One AI desk on your MT5</li>
+            <li>Money never leaves the broker</li>
+            <li>It can wait</li>
+            <li>You can stop it</li>
+            <li>English log</li>
+            <li>MoMo or card</li>
+          </ul>
+          <a class="btn btn-primary" href="https://cipha.app/auth">Connect your account</a>
         </article>
-
-        <article class="price-card is-lock reveal">
-          <p class="price-kicker">Coming</p>
-          <h3>Whiskey</h3>
-          <p class="price-amt">—</p>
-          <p class="price-body">One agent + runner. Listed when it charges.</p>
-          <p class="coming">No payment yet</p>
-        </article>
-
-        <article class="price-card is-lock reveal">
-          <p class="price-kicker">Coming</p>
-          <h3>Binaries</h3>
-          <p class="price-amt">$29 <span>/ GHS 350</span>
-            <small>when live</small>
-          </p>
-          <p class="price-body">Deriv. Up or down. Locked until the flag is on.</p>
-          <p class="coming">No payment yet</p>
+        <article class="card">
+          <h3>Seven days</h3>
+          <p class="price" data-price="week">$19</p>
+          <ul class="checks">
+            <li>Same desk, seven days</li>
+          </ul>
+          <a class="btn btn-outline" href="https://cipha.app/auth">Try a week</a>
         </article>
       </div>
-
-      <div class="price-extras reveal">
-        <div>
-          <strong>Add-ons</strong>
-          <ul>
-            <li>Extra MT5 +$29</li>
-            <li>Prop +$39</li>
-            <li>Arena — later</li>
-          </ul>
-        </div>
-        <div>
-          <strong>Also</strong>
-          <ul>
-            <li>Week pass $19 / GHS 230</li>
-            <li>Yearly = 10 months</li>
-            <li>Stack: 15% two engines, 20% three</li>
-          </ul>
-        </div>
-      </div>
+      <p class="buy-note">Extra MT5 +$29 · Prop +$39</p>
+      <p class="buy-note">Whiskey, binaries, and Arena are coming.</p>
     </section>
 
-    <section class="partners" id="partners">
-      <h2 class="reveal">You are the engine.</h2>
-      <p class="reveal">People with a group don’t buy your signals. Their people connect their own MT5.</p>
-      <a class="btn btn-ink reveal" href="https://cipha.app/auth">Partners</a>
+    <section class="wrap faq">
+      <h2>Straight answers</h2>
+      <details><summary>Do you hold my money?</summary><p>No. Your money stays at your broker. Cipha uses the account. We never take custody.</p></details>
+      <details><summary>Do I need to know how to trade?</summary><p>No. That’s the point. You connect the account. You don’t sit on charts, and you don’t click buy/sell here.</p></details>
+      <details><summary>Can I lose money?</summary><p>Yes. Trading can lose money. Cipha can wait, and you can stop it. It is not a payout guarantee.</p></details>
+      <details><summary>How do I stop?</summary><p>Disconnect or kill the desk. The agent loses the keys. Your broker account stays yours.</p></details>
+      <details><summary>Which brokers?</summary><p>Any broker or prop firm that gives you MetaTrader 5.</p></details>
+      <details><summary>Why isn’t this WhatsApp signals?</summary><p>Signals ask you to click. Cipha does not. The agent trades on your login. You watch the English log.</p></details>
+    </section>
+
+    <section class="wrap close">
+      <h2>You don’t have to become a trader.</h2>
+      <a class="btn btn-primary btn-lg" href="https://cipha.app/auth">Connect your account</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p class="ghost-word" aria-hidden="true">CIPHA</p>
-    <div class="footer-row">
-      <p>Accra</p>
-      <a href="https://cipha.app/auth">Connect your MT5</a>
-    </div>
-    <p class="legal">Non-custodial. Cipha never holds your funds. This is not investment advice. Profit is not guaranteed.</p>
-    <p class="copy">© 2026 Cipha Markets</p>
+  <footer class="wrap site-footer">
+    <span>© 2026 Cipha</span>
+    <nav>
+      <a href="pricing.html">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="https://cipha.app/auth">Log in</a>
+    </nav>
   </footer>
-
   <script src="js/site.js"></script>
 </body>
 </html>
