@@ -102,7 +102,7 @@ button { font-family: inherit; }
 .buy { padding: 72px 0 40px; }
 .buy-head { text-align: center; }
 .buy-head h2 { font-size: clamp(32px, 3.4vw, 48px); }
-.toggles { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.toggles { display: flex; justify-content: center; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
 .seg { display: inline-flex; background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; padding: 3px; }
 .seg button { border: 0; background: transparent; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); }
